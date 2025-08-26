@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>SmartShot — Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="container wide">
+  <header>
+    <div class="brand">
+      <img src="icons/icon48.png" alt="icon" />
+      <h1>Settings</h1>
+      <span id="totalBadge" class="badge"></span>
+    </div>
+  </header>
+
+  <main class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+    <section class="card">
+      <div class="meta">
+        <div class="field">
+          <label>Ollama Base URL</label>
+          <input id="baseUrl" placeholder="http://127.0.0.1:11434" />
+        </div>
+
+        <div class="field">
+          <label>Embedding Model</label>
+          <select id="embedModel"></select>
+          <small>Use an embeddings-capable model (e.g., <code>nomic-embed-text</code>).</small>
+        </div>
+
+        <div class="field">
+          <label><input type="checkbox" id="useRerank" /> Enable reranking with a local LLM</label>
+          <div style="margin-top:6px;">
+            <label>Rerank Model</label>
+            <select id="rerankModel"></select>
+          </div>
+          <small>Optional: After initial semantic search, a local LLM scores the top candidates for better "vague query" handling.</small>
+        </div>
+
+        <div class="field">
+          <label>Hybrid Search Balance</label>
+          <input id="semanticWeight" type="range" min="0" max="1" step="0.05" />
+          <small><b>0</b> = keyword heavy, <b>1</b> = semantic heavy. Default 0.7.</small>
+        </div>
+
+        <div class="field">
+          <label>Top Results (K)</label>
+          <input id="topK" type="number" min="1" max="100" />
+        </div>
+
+        <div class="actions">
+          <button id="save" class="btn primary">Save</button>
+          <button id="refreshModels" class="btn">Refresh Ollama Models</button>
+          <button id="test" class="btn">Test Ollama Connection</button>
+          <button id="openShortcuts" class="btn">Keyboard Shortcuts</button>
+        </div>
+
+        <p id="status" class="status"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="meta">
+        <div class="field">
+          <label><input type="checkbox" id="captureText" /> Capture page body text for search</label>
+        </div>
+
+        <div class="field">
+          <label><input type="checkbox" id="saveToDownloads" /> Also save each screenshot &amp; metadata to your Downloads folder</label>
+        </div>
+
+        <div class="field">
+          <label>Subfolder</label>
+          <input id="downloadSubfolder" placeholder="SmartShot" />
+          <small id="pathPreview" class="hint">Effective path: <code>~/Downloads/SmartShot</code></small>
+        </div>
+
+        <div class="field">
+          <label><input type="checkbox" id="askSaveAs" /> Ask where to save each time</label>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

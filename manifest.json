@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "SmartShot \u2014 AI Screenshot + Search (Local Ollama)",
+  "version": "0.1.0",
+  "description": "Capture screenshots with rich metadata, embed text via your local Ollama model, and search your visual knowledge base \u2014 all locally.",
+  "action": {
+    "default_title": "SmartShot",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "https://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "capture-visible": {
+      "suggested_key": {
+        "default": "Alt+S",
+        "mac": "Alt+S"
+      },
+      "description": "Capture screenshot (visible area)"
+    },
+    "open-search": {
+      "suggested_key": {
+        "default": "Alt+F",
+        "mac": "Alt+F"
+      },
+      "description": "Open SmartShot Search"
+    }
+  },
+  "optional_permissions": [
+    "downloads"
+  ]
+}

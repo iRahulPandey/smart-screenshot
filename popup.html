@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>SmartShot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="container">
+  <header class="headerbar">
+    <div class="brand">
+      <img src="icons/icon48.png" alt="icon" />
+      <h1>SmartShot</h1>
+      <span id="shotCount" class="badge">0 shots</span>
+    </div>
+    <a class="icon-gear" href="options.html" title="Settings" target="_blank">⚙️</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <button id="captureBtn" class="btn primary">📸 Capture Screenshot</button>
+      <button id="searchBtn" class="btn">🔎 Open Search</button>
+    </div>
+    <a href="options.html" target="_blank" class="link">Settings</a>
+    <p class="hint">Tip: Use keyboard shortcuts — <code>Alt+S</code> to capture, <code>Alt+F</code> to search (customize in <em>chrome://extensions/shortcuts</em>).</p>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

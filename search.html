@@ -1,0 +1,30 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>SmartShot — Search</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="container wide">
+  <header class="headerbar">
+    <div>
+      <h1>Search Screenshots</h1>
+      <h2 id="subtitle" class="counter">Loading…</h2>
+    </div>
+    <div class="header-right">
+      <span id="totalBadge" class="badge">0 shots</span>
+    </div>
+  </header>
+
+  <div class="searchbar">
+    <input id="q" placeholder="Type to search… e.g., 'mlflow prompt registry article'" />
+    <button id="go" class="btn primary">Search</button>
+  </div>
+
+  <main id="results" class="grid"></main>
+  <footer id="pager" class="pagination"></footer>
+
+  <script type="module" src="search.js"></script>
+</body>
+</html>
